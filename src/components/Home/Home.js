@@ -57,14 +57,14 @@ const Home = () => {
     return (
         <section className='border-y-2'>
             <div className='container-body'>
-                <div className=' bg-slate-100 pb-14'>
+                <div className=' bg-slate-100 lg:pb-14 pb:0'>
                     <div className='mx-[190px] mt-14'>
                         <div className='flex items-center gap-3 text-indigo-600 mb-6'>
                             <FontAwesomeIcon icon={faDumbbell} className="w-8 h-8"></FontAwesomeIcon>
                             <h1 className='text-3xl font-bold'>Today's Acticity</h1>
                         </div>
                         <h2 className='text-xl font-semibold mb-2'>Select Exercise</h2>
-                        <div className='grid grid-cols-3 gap-5'>
+                        <div className='lg:grid lg:grid-cols-3 lg:gap-5'>
                             {
                                 activities.map(activity => <SingleCart
                                     activity={activity}
