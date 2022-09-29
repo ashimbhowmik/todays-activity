@@ -32,7 +32,18 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div></div>
+                <section className='py-4 px-6 border-t-2'>
+                    <div className="w-12 ">
+                        <img className='rounded-full' src="https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvczkzLXBhLTU3OThfMS5wbmc.png?s=sbMLk1eiRzQUOrMIRvmZPgG2eK7zXEBeeLefvv7JzDY" alt="" />
+                        <div>
+                            <h1>Zahid Hasan</h1>
+                            <div>
+                                <p></p>
+                                <p>Sydney,Australia</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     );
