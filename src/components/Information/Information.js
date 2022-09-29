@@ -20,11 +20,11 @@ const Information = () => {
             <div className='mt-6'>
                 <h1 className='font-semibold text-xl mb-6'>Add Break</h1>
                 <div className='grid grid-cols-5 gap-5 bg-slate-100 p-5 rounded-lg'>
-                    <p className='bg-white rounded-full w-10 h-10 flex justify-center items-center font-semibold'>10<span>s</span></p>
-                    <p className='bg-indigo-500 text-white rounded-full w-10 h-10 flex justify-center items-center font-semibold '>20<span>s</span></p>
-                    <p className='bg-white rounded-full w-10 h-10 flex justify-center items-center font-semibold'>30<span>s</span></p>
-                    <p className='bg-white rounded-full w-10 h-10 flex justify-center items-center font-semibold'>40<span>s</span></p>
-                    <p className='bg-white rounded-full w-10 h-10 flex justify-center items-center font-semibold'>50<span>s</span></p>
+                    <p className='bg-white rounded-full w-10 h-10 flex justify-center items-center font-semibold hover:bg-indigo-500 hover:text-white cursor-pointer'>10<span>s</span></p>
+                    <p className='bg-indigo-500 text-white rounded-full w-10 h-10 flex justify-center items-center font-semibold cursor-pointer'>20<span>s</span></p>
+                    <p className='bg-white rounded-full w-10 h-10 flex justify-center items-center font-semibold hover:bg-indigo-500 hover:text-white cursor-pointer'>30<span>s</span></p>
+                    <p className='bg-white rounded-full w-10 h-10 flex justify-center items-center font-semibold hover:bg-indigo-500 hover:text-white cursor-pointer'>40<span>s</span></p>
+                    <p className='bg-white rounded-full w-10 h-10 flex justify-center items-center font-semibold hover:bg-indigo-500 hover:text-white cursor-pointer'>50<span>s</span></p>
                 </div>
             </div>
         </section>

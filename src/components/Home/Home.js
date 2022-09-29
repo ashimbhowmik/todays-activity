@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faDumbbell, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import SingleCart from '../SingleCart/SingleCart';
 import './Home.css';
 import Information from '../Information/Information';
+import Details from '../Exercise-Details/Details';
 
 const Home = () => {
 
@@ -20,10 +21,11 @@ const Home = () => {
             <div className='container-body'>
                 <div className=' bg-slate-100'>
                     <div className='mx-[190px] mt-14'>
-                        <div className=''>
-                            <h1 className='text-3xl font-semibold'>Today's Acticity</h1>
+                        <div className='flex items-center gap-3 text-indigo-600 mb-6'>
+                            <FontAwesomeIcon icon={faDumbbell} className="w-8 h-8"></FontAwesomeIcon>
+                            <h1 className='text-3xl font-bold'>Today's Acticity</h1>
                         </div>
-                        <h2>Select Exercise</h2>
+                        <h2 className='text-xl font-semibold mb-2'>Select Exercise</h2>
                         <div className='grid grid-cols-3 gap-5'>
                             {
                                 activities.map(activity => <SingleCart
@@ -48,6 +50,7 @@ const Home = () => {
                     </div>
                     <div>
                         <Information></Information>
+                        <Details></Details>
                     </div>
                 </section>
             </div>
