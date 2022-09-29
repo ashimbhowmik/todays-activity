@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDumbbell, faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { addToDb, getStoredCart } from '../../Utility/fakedb';
 import SingleCart from '../SingleCart/SingleCart';
 import './Home.css';
 import Information from '../Information/Information';
@@ -15,6 +16,43 @@ const Home = () => {
             .then(res => res.json())
             .then(data => setActivities(data));
     }, []);
+
+    const [cart, setCart] = useState([]);
+
+    useEffect(() => {
+        const storedCart = getStoredCart();
+        const savedCart = [];
+        for (const id in storedCart) {
+            // console.log(id)
+            const addedProduct = activities.find(activity => activity.id === id);
+            if (addedProduct) {
+                const quantity = storedCart[id];
+                addedProduct.quantity = quantity;
+                savedCart.push(addedProduct);
+            }
+            // console.log(addedProduct);
+            setCart(savedCart);
+        }
+    }, [activities])
+
+    const handleAddToCart = (selectedProduct) => {
+        let newCart = []
+        const exists = cart.find(activity => activity.id === selectedProduct);
+        if (!exists) {
+            selectedProduct.quantity = 1;
+            newCart = [...cart, selectedProduct];
+        }
+        else {
+            const rest = cart.filter(activity => activity.id !== selectedProduct.id);
+            exists.quantity = exists.quantity + 1;
+            newCart = [...rest, exists];
+        }
+        setCart(newCart);
+        addToDb(selectedProduct.id);
+        document.getElementById('change-color');
+
+    }
+
 
     return (
         <section className='border-y-2'>
@@ -31,7 +69,7 @@ const Home = () => {
                                 activities.map(activity => <SingleCart
                                     activity={activity}
                                     key={activity.id}
-
+                                    handleAddToCart={handleAddToCart}
                                 ></SingleCart>)
                             }
                         </div>
@@ -51,10 +89,11 @@ const Home = () => {
                         </div>
                         <div className=''>
                             <Information></Information>
-                            <Details></Details>
+                            <Details cart={cart}></Details>
                         </div>
                     </div>
                 </section>
+
             </div>
         </section>
     );
