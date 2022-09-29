@@ -53,10 +53,6 @@ const addToast = () => {
     const add = document.getElementById('toast-interactive');
     add.classList.remove('hidden');
 }
-const addColor = () => {
-    const add = document.getElementById('toast-interactive');
-    add.classList.remove('hidden');
-}
 
 
 

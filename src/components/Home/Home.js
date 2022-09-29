@@ -6,6 +6,7 @@ import SingleCart from '../SingleCart/SingleCart';
 import './Home.css';
 import Information from '../Information/Information';
 import Details from '../Exercise-Details/Details';
+import Question from '../Questuion/Question';
 
 const Home = () => {
 
@@ -49,7 +50,6 @@ const Home = () => {
         }
         setCart(newCart);
         addToDb(selectedProduct.id);
-        document.getElementById('change-color');
 
     }
 
@@ -73,6 +73,7 @@ const Home = () => {
                                 ></SingleCart>)
                             }
                         </div>
+                        <Question></Question>
                     </div>
                 </div>
                 <section className='py-4 px-6 '>
@@ -93,7 +94,6 @@ const Home = () => {
                         </div>
                     </div>
                 </section>
-
             </div>
         </section>
     );
