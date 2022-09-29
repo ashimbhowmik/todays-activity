@@ -3,47 +3,37 @@
 // use local storage to manage cart data
 const addToDb = id => {
 
-    let shoppingCart = {};
+    let activityCart = {};
 
     //get the shopping cart from local storage
-    const storedCart = localStorage.getItem('shopping-cart');
+    const storedCart = localStorage.getItem('activity-Cart');
     if (storedCart) {
-        shoppingCart = JSON.parse(storedCart);
+        activityCart = JSON.parse(storedCart);
     }
 
     // add quantity
-    const quantity = shoppingCart[id];
+    const quantity = activityCart[id];
     if (quantity) {
         const newQuantity = quantity + 1;
-        shoppingCart[id] = newQuantity;
+        activityCart[id] = newQuantity;
     }
     else {
-        shoppingCart[id] = 1;
+        activityCart[id] = 1;
     }
-    localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
+    localStorage.setItem('activity-Cart', JSON.stringify(activityCart));
 }
 
 const getStoredCart = () => {
-    let shoppingCart = {};
+    let activityCart = {};
 
     //get the shopping cart from local storage
-    const storedCart = localStorage.getItem('shopping-cart');
+    const storedCart = localStorage.getItem('activity-Cart');
     if (storedCart) {
-        shoppingCart = JSON.parse(storedCart);
+        activityCart = JSON.parse(storedCart);
     }
-    return shoppingCart;
+    return activityCart;
 }
 
-const removeFromDb = id => {
-    const storedCart = localStorage.getItem('shopping-cart');
-    if (storedCart) {
-        const shoppingCart = JSON.parse(storedCart);
-        if (id in shoppingCart) {
-            delete shoppingCart[id];
-            localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
-        }
-    }
-}
 
 const deleteToast = () => {
     const hide = document.getElementById('toast-interactive');
@@ -54,14 +44,9 @@ const addToast = () => {
     add.classList.remove('hidden');
 }
 
-
-
-
-
 export {
     addToDb,
     getStoredCart,
-    removeFromDb,
     deleteToast,
     addToast,
 }

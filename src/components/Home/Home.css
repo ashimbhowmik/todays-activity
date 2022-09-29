@@ -4,9 +4,10 @@
 }
 
 @media screen and (max-width:640px) {
-    .container-bodyr{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+    .container-body{
+        display: flex;
+        flex-direction: column-reverse;
+        
     
     }
 }

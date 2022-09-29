@@ -36,20 +36,20 @@ const Home = () => {
         }
     }, [activities])
 
-    const handleAddToCart = (selectedProduct) => {
+    const handleAddToCart = (selectedActivity) => {
         let newCart = []
-        const exists = cart.find(activity => activity.id === selectedProduct);
+        const exists = cart.find(activity => activity.id === selectedActivity);
         if (!exists) {
-            selectedProduct.quantity = 1;
-            newCart = [...cart, selectedProduct];
+            selectedActivity.quantity = 1;
+            newCart = [...cart, selectedActivity];
         }
         else {
-            const rest = cart.filter(activity => activity.id !== selectedProduct.id);
+            const rest = cart.filter(activity => activity.id !== selectedActivity.id);
             exists.quantity = exists.quantity + 1;
             newCart = [...rest, exists];
         }
         setCart(newCart);
-        addToDb(selectedProduct.id);
+        addToDb(selectedActivity.id);
 
     }
 
@@ -57,8 +57,8 @@ const Home = () => {
     return (
         <section className='border-y-2'>
             <div className='container-body'>
-                <div className=' bg-slate-100 lg:pb-14 pb:0'>
-                    <div className='mx-[190px] mt-14'>
+                <div className=' bg-slate-100 pb-14 w-full'>
+                    <div className='lg:mx-[190px] mx-5 mt-14'>
                         <div className='flex items-center gap-3 text-indigo-600 mb-6'>
                             <FontAwesomeIcon icon={faDumbbell} className="w-8 h-8"></FontAwesomeIcon>
                             <h1 className='text-3xl font-bold'>Today's Acticity</h1>
@@ -76,7 +76,7 @@ const Home = () => {
                         <Question></Question>
                     </div>
                 </div>
-                <section className='py-4 px-6 '>
+                <section className='py-4 px-6'>
                     <div className='sticky top-0'>
                         <div className="w-12 flex gap-3">
                             <img className='rounded-full' src="https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvczkzLXBhLTU3OThfMS5wbmc.png?s=sbMLk1eiRzQUOrMIRvmZPgG2eK7zXEBeeLefvv7JzDY" alt="" />
