@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import SingleCart from '../SingleCart/SingleCart';
 import './Home.css';
+import Information from '../Information/Information';
 
 const Home = () => {
 
@@ -13,7 +16,7 @@ const Home = () => {
     }, []);
 
     return (
-        <div className=''>
+        <section className='border-t-2'>
             <div className='container-body'>
                 <div className=' bg-slate-100'>
                     <div className='mx-[190px] mt-14'>
@@ -32,20 +35,23 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <section className='py-4 px-6 border-t-2'>
-                    <div className="w-12 ">
+                <section className='py-4 px-6 '>
+                    <div className="w-12 flex gap-3">
                         <img className='rounded-full' src="https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvczkzLXBhLTU3OThfMS5wbmc.png?s=sbMLk1eiRzQUOrMIRvmZPgG2eK7zXEBeeLefvv7JzDY" alt="" />
-                        <div>
-                            <h1>Zahid Hasan</h1>
-                            <div>
-                                <p></p>
+                        <div className=''>
+                            <h1 className='font-bold text-xl'>Zahid Hasan</h1>
+                            <div className='flex items-center gap-2 text-slate-400'>
+                                <FontAwesomeIcon icon={faLocationDot}></FontAwesomeIcon>
                                 <p>Sydney,Australia</p>
                             </div>
                         </div>
                     </div>
+                    <div>
+                        <Information></Information>
+                    </div>
                 </section>
             </div>
-        </div>
+        </section>
     );
 };
 
